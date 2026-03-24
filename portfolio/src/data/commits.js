@@ -1,0 +1,317 @@
+// ─────────────────────────────────────────────────────────
+//  commits.js
+//  Commit timeline data for every project.
+//  Entries are ordered newest → oldest (index 0 = latest).
+//  Lookup by projectId: commits["devboard"]
+//
+//  Fields per commit:
+//    id        — unique stable key for React rendering
+//    projectId — matches id in projects.js
+//    hash      — short 7-char git hash (display only)
+//    message   — conventional-commit format
+//    author    — committer display name
+//    date      — human-readable relative or absolute date
+//    additions — lines added   (optional, for diff bar)
+//    deletions — lines removed (optional, for diff bar)
+//    image     — screenshot URL (optional)
+// ─────────────────────────────────────────────────────────
+
+const commits = {
+
+  // ── devboard ───────────────────────────────────────────
+  devboard: [
+    {
+      id:        "db-c1",
+      projectId: "devboard",
+      hash:      "a3f92bc",
+      message:   "feat: add WebSocket reconnection with exponential backoff",
+      author:    "Alex Morgan",
+      date:      "2 days ago",
+      additions: 124,
+      deletions: 18,
+      image:     null,
+    },
+    {
+      id:        "db-c2",
+      projectId: "devboard",
+      hash:      "b7d41ea",
+      message:   "fix: resolve race condition in pipeline status reducer",
+      author:    "Alex Morgan",
+      date:      "4 days ago",
+      additions: 31,
+      deletions: 45,
+      image:     null,
+    },
+    {
+      id:        "db-c3",
+      projectId: "devboard",
+      hash:      "c9e83ff",
+      message:   "feat: deployment rollback UI with confirmation modal",
+      author:    "Alex Morgan",
+      date:      "1 week ago",
+      additions: 287,
+      deletions: 12,
+      image:     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75",
+    },
+    {
+      id:        "db-c4",
+      projectId: "devboard",
+      hash:      "d2a15cb",
+      message:   "chore: upgrade to React 18 concurrent mode",
+      author:    "Alex Morgan",
+      date:      "2 weeks ago",
+      additions: 56,
+      deletions: 98,
+      image:     null,
+    },
+    {
+      id:        "db-c5",
+      projectId: "devboard",
+      hash:      "e6b70dd",
+      message:   "feat: Slack notification integration",
+      author:    "Alex Morgan",
+      date:      "3 weeks ago",
+      additions: 193,
+      deletions: 4,
+      image:     null,
+    },
+    {
+      id:        "db-c6",
+      projectId: "devboard",
+      hash:      "f1c44ae",
+      message:   "test: E2E coverage for pipeline dashboard with Playwright",
+      author:    "Alex Morgan",
+      date:      "1 month ago",
+      additions: 412,
+      deletions: 0,
+      image:     null,
+    },
+    {
+      id:        "db-c7",
+      projectId: "devboard",
+      hash:      "g8d92bc",
+      message:   "init: project scaffolding and monorepo setup",
+      author:    "Alex Morgan",
+      date:      "Jan 2024",
+      additions: 634,
+      deletions: 0,
+      image:     null,
+    },
+  ],
+
+  // ── nexus-auth ─────────────────────────────────────────
+  "nexus-auth": [
+    {
+      id:        "na-c1",
+      projectId: "nexus-auth",
+      hash:      "a1b2c3d",
+      message:   "feat: PKCE flow for public clients",
+      author:    "Alex Morgan",
+      date:      "5 days ago",
+      additions: 218,
+      deletions: 34,
+      image:     null,
+    },
+    {
+      id:        "na-c2",
+      projectId: "nexus-auth",
+      hash:      "b2c3d4e",
+      message:   "security: patch token refresh timing vulnerability",
+      author:    "Alex Morgan",
+      date:      "1 week ago",
+      additions: 47,
+      deletions: 61,
+      image:     null,
+    },
+    {
+      id:        "na-c3",
+      projectId: "nexus-auth",
+      hash:      "c3d4e5f",
+      message:   "feat: multi-tenant SSO with tenant isolation",
+      author:    "Alex Morgan",
+      date:      "2 weeks ago",
+      additions: 394,
+      deletions: 22,
+      image:     "https://images.unsplash.com/photo-1618044619888-009e412ff12a?w=600&q=75",
+    },
+    {
+      id:        "na-c4",
+      projectId: "nexus-auth",
+      hash:      "d4e5f6g",
+      message:   "docs: comprehensive API reference with usage examples",
+      author:    "Alex Morgan",
+      date:      "3 weeks ago",
+      additions: 527,
+      deletions: 14,
+      image:     null,
+    },
+    {
+      id:        "na-c5",
+      projectId: "nexus-auth",
+      hash:      "e5f6g7h",
+      message:   "feat: automatic JWT rotation with silent refresh",
+      author:    "Alex Morgan",
+      date:      "1 month ago",
+      additions: 163,
+      deletions: 41,
+      image:     null,
+    },
+    {
+      id:        "na-c6",
+      projectId: "nexus-auth",
+      hash:      "f6g7h8i",
+      message:   "init: library scaffold with TypeScript strict mode",
+      author:    "Alex Morgan",
+      date:      "Sep 2023",
+      additions: 441,
+      deletions: 0,
+      image:     null,
+    },
+  ],
+
+  // ── graphql-storm ──────────────────────────────────────
+  "graphql-storm": [
+    {
+      id:        "gs-c1",
+      projectId: "graphql-storm",
+      hash:      "aa1bb2c",
+      message:   "feat: query complexity scoring algorithm",
+      author:    "Alex Morgan",
+      date:      "2 weeks ago",
+      additions: 189,
+      deletions: 12,
+      image:     null,
+    },
+    {
+      id:        "gs-c2",
+      projectId: "graphql-storm",
+      hash:      "bb2cc3d",
+      message:   "feat: N+1 detection with actionable warnings",
+      author:    "Alex Morgan",
+      date:      "3 weeks ago",
+      additions: 241,
+      deletions: 37,
+      image:     "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=75",
+    },
+    {
+      id:        "gs-c3",
+      projectId: "graphql-storm",
+      hash:      "cc3dd4e",
+      message:   "feat: auto-generate DataLoaders from schema relations",
+      author:    "Alex Morgan",
+      date:      "1 month ago",
+      additions: 318,
+      deletions: 0,
+      image:     null,
+    },
+    {
+      id:        "gs-c4",
+      projectId: "graphql-storm",
+      hash:      "dd4ee5f",
+      message:   "init: code-first schema builder foundation",
+      author:    "Alex Morgan",
+      date:      "Apr 2023",
+      additions: 502,
+      deletions: 0,
+      image:     null,
+    },
+  ],
+
+  // ── palette-gen ────────────────────────────────────────
+  "palette-gen": [
+    {
+      id:        "pg-c1",
+      projectId: "palette-gen",
+      hash:      "pa1bc2d",
+      message:   "feat: WCAG contrast checker with fix suggestions",
+      author:    "Alex Morgan",
+      date:      "1 month ago",
+      additions: 143,
+      deletions: 28,
+      image:     "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=75",
+    },
+    {
+      id:        "pg-c2",
+      projectId: "palette-gen",
+      hash:      "pb2cd3e",
+      message:   "feat: Figma design token export",
+      author:    "Alex Morgan",
+      date:      "6 weeks ago",
+      additions: 97,
+      deletions: 5,
+      image:     null,
+    },
+    {
+      id:        "pg-c3",
+      projectId: "palette-gen",
+      hash:      "pc3de4f",
+      message:   "feat: integrate Oklab perceptual color model",
+      author:    "Alex Morgan",
+      date:      "2 months ago",
+      additions: 264,
+      deletions: 41,
+      image:     null,
+    },
+    {
+      id:        "pg-c4",
+      projectId: "palette-gen",
+      hash:      "pd4ef5g",
+      message:   "init: CLI scaffold with Click and FastAPI",
+      author:    "Alex Morgan",
+      date:      "Jul 2023",
+      additions: 198,
+      deletions: 0,
+      image:     null,
+    },
+  ],
+
+  // ── rusty-cache ────────────────────────────────────────
+  "rusty-cache": [
+    {
+      id:        "rc-c1",
+      projectId: "rusty-cache",
+      hash:      "rs1ab2c",
+      message:   "feat: NAPI-RS bindings for Node.js integration",
+      author:    "Alex Morgan",
+      date:      "3 weeks ago",
+      additions: 287,
+      deletions: 14,
+      image:     null,
+    },
+    {
+      id:        "rc-c2",
+      projectId: "rusty-cache",
+      hash:      "rs2bc3d",
+      message:   "feat: LFU eviction policy implementation",
+      author:    "Alex Morgan",
+      date:      "1 month ago",
+      additions: 194,
+      deletions: 0,
+      image:     null,
+    },
+    {
+      id:        "rc-c3",
+      projectId: "rusty-cache",
+      hash:      "rs3cd4e",
+      message:   "feat: per-entry TTL with lazy expiration",
+      author:    "Alex Morgan",
+      date:      "6 weeks ago",
+      additions: 121,
+      deletions: 47,
+      image:     "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=75",
+    },
+    {
+      id:        "rc-c4",
+      projectId: "rusty-cache",
+      hash:      "rs4de5f",
+      message:   "init: LRU cache with Arc<RwLock> thread safety",
+      author:    "Alex Morgan",
+      date:      "Nov 2023",
+      additions: 376,
+      deletions: 0,
+      image:     null,
+    },
+  ],
+};
+
+export default commits;
